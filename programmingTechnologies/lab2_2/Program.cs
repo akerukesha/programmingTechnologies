@@ -39,6 +39,9 @@ namespace lab2_2
             }
 
             Console.WriteLine("Maximum: " + max + "\nMinumum: " + min);
+            //закрывается файл
+            sr.Close();
+            fs.Close();
         }
     }
 }
