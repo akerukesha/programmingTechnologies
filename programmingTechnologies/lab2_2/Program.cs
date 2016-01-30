@@ -32,7 +32,7 @@ namespace lab2_2
                 {
                     max = currentNumber;
                 }
-                else if (currentNumber < min)
+                if (currentNumber < min)
                 {
                     min = currentNumber;
                 }
