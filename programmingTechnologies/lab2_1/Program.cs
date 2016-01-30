@@ -12,9 +12,27 @@ namespace lab2_1
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            F4(@"C:\xampp\htdocs\application");
+            //F4(@"C:\xampp\htdocs\application");
             //F5(@"C:\xampp\htdocs\application");
+            F6(@"C:\xampp\htdocs\application");
         }
+
+        private static void F6(string path)
+        {
+            Stack<string> dirs = new Stack<string>(30);
+            dirs.Push(path);
+            while (dirs.Count > 0)
+            {
+                string currentDir = dirs.Pop();
+                string[] subDirs = Directory.GetDirectories(currentDir);
+                foreach (string str in subDirs)
+                {
+                    Console.WriteLine(str + ": " + Directory.GetFiles(str).Length);
+                    dirs.Push(str);
+                }
+            }
+        }
+
         //использую SearchOption.AllDirectories
         private static void F5(string path)
         {
