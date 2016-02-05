@@ -18,21 +18,28 @@ namespace lab2_1
         }
 
         private static void F6(string path)
-        {
-            Stack<string> dirs = new Stack<string>(30);
+        {   //создается стэк
+            Stack<string> dirs = new Stack<string>(100);
+            //кол-во файлов в начальной папке
+            Console.WriteLine(path + ": " + Directory.GetFiles(path).Length);
+            //добавляется путь начальной папки
             dirs.Push(path);
+            //выполняется цикл, пока стэк не станет пустым
             while (dirs.Count > 0)
-            {
+            {   //берется путь последней добавленной папки
                 string currentDir = dirs.Pop();
+                //в массив добавляются пути папок в текущей папке
                 string[] subDirs = Directory.GetDirectories(currentDir);
+                
                 foreach (string str in subDirs)
-                {
+                {   //кол-во файлов в каждой папке
                     Console.WriteLine(str + ": " + Directory.GetFiles(str).Length);
+                    //пути папок добавляются в стэк
                     dirs.Push(str);
                 }
             }
         }
-
+        
         //использую SearchOption.AllDirectories
         private static void F5(string path)
         {
