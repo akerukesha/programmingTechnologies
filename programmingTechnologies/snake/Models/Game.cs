@@ -21,6 +21,7 @@ namespace snake.Models
             food = new Food();
             wall = new Wall();
 
+
             snake.body.Add(new Point { x = 20, y = 20 });
             food.body.Add(new Point { x = 10, y = 20 });
 
@@ -28,7 +29,7 @@ namespace snake.Models
             wall.color = ConsoleColor.White;
             snake.color = ConsoleColor.Yellow;
 
-            Console.SetWindowSize(48, 48);
+            Console.SetWindowSize(48, 51);
         }
 
         public static void LoadlLevel(int level)
@@ -78,6 +79,28 @@ namespace snake.Models
             snake.Draw();
             food.Draw();
             wall.Draw();
+            Console.SetCursorPosition(3, 48);
+            Console.WriteLine("Level: " + Program.level);
+            Console.SetCursorPosition(3, 49);
+            Console.WriteLine("Points: " + Program.gainedPoints);
+        }
+
+        public static void RandomSnake()
+        {
+            snake.body[0].x = new Random().Next(0, 47);
+            snake.body[0].y = new Random().Next(0, 47);
+
+            for (int i = 0; i < wall.body.Count; ++i)
+            {
+                if (snake.body[0].x == wall.body[i].x && snake.body[0].y == wall.body[i].y)
+                {
+                    RandomSnake();
+                }
+                else
+                {
+                    continue;
+                }
+            }
         }
     }
 }

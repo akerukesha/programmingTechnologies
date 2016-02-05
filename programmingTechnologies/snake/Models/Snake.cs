@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace snake.Models
-{   [Serializable]
+{  
     class Snake : Drawer
     {
         public int MyProperty { get; set; }
-
         public Snake()
         {
             sign = 'o';
@@ -36,12 +35,18 @@ namespace snake.Models
 
             if (Game.snake.body[0].x == Game.food.body[0].x && Game.snake.body[0].y == Game.food.body[0].y)
             {
+                Program.gainedPoints++;
                 Game.snake.body.Add(new Point { x = Game.food.body[0].x, y = Game.food.body[0].y } );
-                
-                
-                Game.food.body[0].x = new Random().Next(0, 47);
-                Game.food.body[0].y = new Random().Next(0, 47);
 
+                if (Program.gainedPoints % 5 == 0 && Program.gainedPoints != 0)
+                {
+                    Program.level++;
+                    Console.Clear();
+                    Game.isActive = false;
+                }
+                /*Game.food.body[0].x = new Random().Next(0, 47);
+                Game.food.body[0].y = new Random().Next(0, 47);*/
+                RandomFood();
             }
 
             for (int i = 0; i < Game.wall.body.Count; ++i)
@@ -54,7 +59,35 @@ namespace snake.Models
                     Game.isActive = false;
                 }
             }
+        }
+        public void RandomFood()
+        {
+            Game.food.body[0].x = new Random().Next(0, 47);
+            Game.food.body[0].y = new Random().Next(0, 47);
 
+            for(int i = 0; i < Game.wall.body.Count; ++i)
+            {
+                if (Game.food.body[0].x == Game.wall.body[i].x && Game.food.body[0].y == Game.wall.body[i].y)
+                {
+                    RandomFood();
+                }
+                else
+                {
+                    continue;
+                }
+            }
+
+            for (int i = 0; i < Game.snake.body.Count; ++i)
+            {
+                if (Game.food.body[0].x == Game.snake.body[i].x && Game.food.body[0].y == Game.snake.body[i].y)
+                {
+                    RandomFood();
+                }
+                else
+                {
+                    continue;
+                }
+            }
         }
     }
 }
