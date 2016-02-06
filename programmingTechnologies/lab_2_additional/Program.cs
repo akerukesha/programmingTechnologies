@@ -9,6 +9,12 @@ namespace lab_2_additional
 {
     class Program
     {
+        /// <summary>
+        /// far manager
+        /// передается путь к папке, отображается ее содержимое
+        /// index показывает, где находится курсор, и меняется в зависимости от нажатой клавиши
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             string path = @"C:\xampp\htdocs\application";
