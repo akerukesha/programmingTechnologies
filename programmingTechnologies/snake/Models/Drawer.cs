@@ -31,7 +31,7 @@ namespace snake.Models
         public void Save()
         {
             Type t = GetType();
-            FileStream fs = new FileStream("bug.xml"/*string.Format("{0}.xml", t.Name)*/, FileMode.Create, FileAccess.Write);
+            FileStream fs = new FileStream(string.Format("{0}.xml", t.Name), FileMode.Create, FileAccess.Write);
             XmlSerializer xs = new XmlSerializer(t);
             xs.Serialize(fs, this);
             fs.Close();
@@ -40,7 +40,7 @@ namespace snake.Models
         public void Resume()
         {
             Type t = GetType();
-            FileStream fs = new FileStream("bug.xml"/*string.Format("{0}.xml", t.Name)*/, FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(string.Format("{0}.xml", t.Name), FileMode.Open, FileAccess.Read);
             XmlSerializer xs = new XmlSerializer(t);
             if (t == typeof(Wall)) Game.wall = xs.Deserialize(fs) as Wall;
             if (t == typeof(Snake)) Game.snake = xs.Deserialize(fs) as Snake;

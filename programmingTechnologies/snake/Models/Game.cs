@@ -34,7 +34,7 @@ namespace snake.Models
 
         public static void LoadlLevel(int level)
         {
-            FileStream fs = new FileStream(string.Format(@"Levels\Level{0}.txt", level), FileMode.Open, FileAccess.Read);
+            FileStream fs = new FileStream(string.Format(@"C:\Users\Админ\Source\Repos\programmingTechnologies\programmingTechnologies\snake\Levels\Level{0}.txt", level), FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(fs);
 
             string line;

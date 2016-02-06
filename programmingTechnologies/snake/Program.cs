@@ -43,10 +43,10 @@ namespace snake
                         case ConsoleKey.Escape:
                             Game.isActive = false;
                             break;
-                        case ConsoleKey.F2:
+                        case ConsoleKey.Q:
                             Game.Save();
                             break;
-                        case ConsoleKey.F3:
+                        case ConsoleKey.W:
                             Game.Resume();
                             break;
                     }

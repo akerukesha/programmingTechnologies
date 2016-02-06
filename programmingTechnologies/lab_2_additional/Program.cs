@@ -11,7 +11,7 @@ namespace lab_2_additional
     {
         static void Main(string[] args)
         {
-            string path = "C:\\xampp\\htdocs\\application";
+            string path = @"C:\xampp\htdocs\application";
             DirectoryInfo dir = new DirectoryInfo(path);
 
             List<FileSystemInfo> items = new List<FileSystemInfo>();
@@ -61,7 +61,7 @@ namespace lab_2_additional
                         break;
                     case ConsoleKey.Escape:
                         string currentDir = Directory.GetParent(items[index].FullName).ToString();
-                        if (currentDir == "C:\\xampp\\htdocs\\application")
+                        if (currentDir == @"C:\xampp\htdocs\application")
                         {
                             break;
                         }
