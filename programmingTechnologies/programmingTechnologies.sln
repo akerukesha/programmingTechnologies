@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab2_1", "lab2_1\lab2_1.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_2_additional", "lab_2_additional\lab_2_additional.csproj", "{773BDCE3-8016-436F-A0C3-10F7C9FABF0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sinusoid", "sinusoid\sinusoid.csproj", "{556B2620-A71F-463A-8CF6-95CEF5E4757B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{773BDCE3-8016-436F-A0C3-10F7C9FABF0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{773BDCE3-8016-436F-A0C3-10F7C9FABF0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{773BDCE3-8016-436F-A0C3-10F7C9FABF0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{556B2620-A71F-463A-8CF6-95CEF5E4757B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{556B2620-A71F-463A-8CF6-95CEF5E4757B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{556B2620-A71F-463A-8CF6-95CEF5E4757B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{556B2620-A71F-463A-8CF6-95CEF5E4757B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
