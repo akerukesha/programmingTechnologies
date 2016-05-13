@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab_2_additional", "lab_2_a
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sinusoid", "sinusoid\sinusoid.csproj", "{556B2620-A71F-463A-8CF6-95CEF5E4757B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tangent", "tangent\tangent.csproj", "{3DC100A5-0E31-4355-8699-75CC12E196B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{556B2620-A71F-463A-8CF6-95CEF5E4757B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{556B2620-A71F-463A-8CF6-95CEF5E4757B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{556B2620-A71F-463A-8CF6-95CEF5E4757B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DC100A5-0E31-4355-8699-75CC12E196B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DC100A5-0E31-4355-8699-75CC12E196B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DC100A5-0E31-4355-8699-75CC12E196B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DC100A5-0E31-4355-8699-75CC12E196B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

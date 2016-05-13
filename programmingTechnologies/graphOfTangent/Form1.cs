@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace sinusoid
+namespace graphOfTangent
 {
     public partial class Form1 : Form
     {
@@ -17,7 +17,7 @@ namespace sinusoid
         //Graphics g;
 
         List<PointF> arr = new List<PointF>();
-        
+
         Pen pen = new Pen(Color.Red);
         public static int x = 0;
         public static double y;
@@ -36,15 +36,7 @@ namespace sinusoid
 
         private void T_Tick(object sender, EventArgs e)
         {
-            x++;
-            y = Math.Sin(x);
-            px = (float)x * 10 + 50;
-            py = (float)y * 10 + 200;
-            arr.Add(new PointF(px, py));
-            if (x < 540)
-            {
-                this.Refresh();
-            }
+
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -82,7 +74,6 @@ namespace sinusoid
                 e.Graphics.DrawString("-1", font1, Brushes.Black, 40, 205);
             }
         }
-
         private void DrawWithCurve(PaintEventArgs e)
         {
             e.Graphics.DrawCurve(pen, arr.ToArray());

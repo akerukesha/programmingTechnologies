@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace sinusoid
+namespace tangent
 {
     public partial class Form1 : Form
     {
@@ -17,31 +17,45 @@ namespace sinusoid
         //Graphics g;
 
         List<PointF> arr = new List<PointF>();
-        
+
         Pen pen = new Pen(Color.Red);
-        public static int x = 0;
+        public static int x = -89;
         public static double y;
-        public static float px = 0, py = 0;
+        public static float px, py;
 
         public Form1()
         {
             InitializeComponent();
             //bmp = new Bitmap(200, 200);
-            arr.Add(new PointF(50, 200));
-            arr.Add(new PointF(50, 200));
+            y = Math.Tan(x * (3.14159265359 / 180));
+            px = (float)x + 50;
+            py = -(float)y * 100 + 200;
+            arr.Add(new PointF(px, py));
+            arr.Add(new PointF(px, py));
             t.Tick += T_Tick;
-            t.Interval = 2000;
+            t.Interval = 100;
             t.Start();
         }
 
         private void T_Tick(object sender, EventArgs e)
         {
             x++;
-            y = Math.Sin(x);
-            px = (float)x * 10 + 50;
-            py = (float)y * 10 + 200;
+            if ((x % 90 == 0) && (x % 180 != 0))
+            {
+                arr = new List<PointF>();
+                x++;
+                y = Math.Tan(x * (3.14159265359 / 180));
+                px = (float)x + 50;
+                py = -(float)y * 100 + 200;
+                arr.Add(new PointF(px, py));
+                arr.Add(new PointF(px, py));
+                x++;
+            }
+            y = Math.Tan(x * (3.14159265359/180));
+            px = (float)x + 50;
+            py = -(float)y * 100 + 200;
             arr.Add(new PointF(px, py));
-            if (x < 540)
+            if (x <= 540)
             {
                 this.Refresh();
             }
@@ -58,9 +72,9 @@ namespace sinusoid
             DrawWithCurve(e);
             using (Font font1 = new Font("Times New Roman", 9, FontStyle.Bold, GraphicsUnit.Pixel))
             {
-                for (int i = 0; i < 16; i++)
+                for (int i = 0; i < 4; i++)
                 {
-                    PointF pointF1 = new PointF(50 + i + 30 * i, 200);
+                    PointF pointF1 = new PointF(50 + 180 * i, 200);
                     string s = "";
                     if (i == 0)
                     {
@@ -78,8 +92,8 @@ namespace sinusoid
                 }
                 e.Graphics.DrawString("X", font1, Brushes.Black, 650, 200);
                 e.Graphics.DrawString("Y", font1, Brushes.Black, 40, 25);
-                e.Graphics.DrawString("1", font1, Brushes.Black, 40, 185);
-                e.Graphics.DrawString("-1", font1, Brushes.Black, 40, 205);
+                e.Graphics.DrawString("1", font1, Brushes.Black, 40, 300);
+                e.Graphics.DrawString("-1", font1, Brushes.Black, 40, 100);
             }
         }
 
