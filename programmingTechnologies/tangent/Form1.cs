@@ -18,7 +18,7 @@ namespace tangent
 
         List<PointF> arr = new List<PointF>();
 
-        Pen pen = new Pen(Color.Black);
+        Pen pen = new Pen(Color.Red);
         public static int x = -89;
         public static double y;
         public static float px, py;
